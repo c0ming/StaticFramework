@@ -10,10 +10,11 @@ if [ -d "${SRCROOT}/${PROJECT_NAME}.framework" ]; then
 rm -rf "${SRCROOT}/${PROJECT_NAME}.framework"
 fi
 
+# 需要在 Targets -> RNPatchSDK（不要选择错） -> Build Settings 里设置 MACH-O TYPE 为 Static Libraray，Other C Flags 添加-fembed-bitcode
 xcodebuild -sdk "iphoneos"
 xcodebuild -sdk "iphonesimulator"
 
-# 如果没有在项目中设置
+# 如果没有设置
 # xcodebuild MACH_O_TYPE="staticlib" OTHER_CFLAGS="-fembed-bitcode" -sdk "iphoneos"
 # xcodebuild MACH_O_TYPE="staticlib" OTHER_CFLAGS="-fembed-bitcode" -sdk "iphonesimulator"
 
