@@ -1,0 +1,6 @@
+framework module RNPatchSDK {
+  umbrella header "RNPatchSDK.h"
+
+  export *
+  module * { export * }
+}
